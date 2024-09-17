@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9ED92746-2608-42CA-A485-898AD2BCB08F}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+		Directory.Build.props = Directory.Build.props
+		version.json = version.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DE699C04-5FC5-471E-A617-512D8F09B0E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamerTalk.TailwindCSS.MSBuild", "src\GamerTalk.TailwindCSS.MSBuild\GamerTalk.TailwindCSS.MSBuild.csproj", "{9E8BC22C-3C3A-43E8-A6DC-D2F0B8B4082A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9E8BC22C-3C3A-43E8-A6DC-D2F0B8B4082A} = {DE699C04-5FC5-471E-A617-512D8F09B0E0}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E8BC22C-3C3A-43E8-A6DC-D2F0B8B4082A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E8BC22C-3C3A-43E8-A6DC-D2F0B8B4082A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E8BC22C-3C3A-43E8-A6DC-D2F0B8B4082A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E8BC22C-3C3A-43E8-A6DC-D2F0B8B4082A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

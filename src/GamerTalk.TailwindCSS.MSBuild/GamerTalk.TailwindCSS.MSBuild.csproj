@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <DevelopmentDependency>true</DevelopmentDependency>
+        <PackageId>GamerTalk.TailwindCSS.MSBuild</PackageId>
+        <Authors>Kieran Foot</Authors>
+        <Description>Package adding support for TailwindCSS to MSBuild.</Description>
+        <PackageTags>Tailwind;TailwindCSS;MSBuild;CSS</PackageTags>
+        <Copyright>Copyright 2024 (c) GamerTalk.Net</Copyright>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/GamerTalkNet/TailwindCSS.MSBuild</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="..\..\README.md" Pack="true" PackagePath="\" />
+
+        <Content Include="Build\GamerTalk.TailwindCSS.MSBuild.props" Pack="true" PackagePath="build" />
+        <Content Include="Build\GamerTalk.TailwindCSS.MSBuild.props" Pack="true" PackagePath="buildMultiTargeting" />
+
+        <Content Include="Build\GamerTalk.TailwindCSS.MSBuild.targets" Pack="true" PackagePath="build" />
+        <Content Include="Build\GamerTalk.TailwindCSS.MSBuild.targets" Pack="true" PackagePath="buildMultiTargeting" />
+    </ItemGroup>
+
+</Project>
