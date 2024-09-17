@@ -31,4 +31,11 @@
         <Content Include="Build\GamerTalk.TailwindCSS.MSBuild.targets" Pack="true" PackagePath="buildMultiTargeting" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="GamerTalk.NodeJs.MSBuild" Version="1.0.4-beta">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
 </Project>
