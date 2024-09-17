@@ -15,6 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DE699C04-5FC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamerTalk.TailwindCSS.MSBuild", "src\GamerTalk.TailwindCSS.MSBuild\GamerTalk.TailwindCSS.MSBuild.csproj", "{9E8BC22C-3C3A-43E8-A6DC-D2F0B8B4082A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflows", "Workflows", "{FDAAD157-DB4E-4E92-8BDC-2E2B22B71AE8}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
