@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <TailwindCSSAssemblyPath>$(MSBuildThisFileDirectory)bin\$(Configuration)\$(TargetFramework)</TailwindCSSAssemblyPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\GamerTalk.TailwindCSS.MSBuild\GamerTalk.TailwindCSS.MSBuild.csproj" />
+    </ItemGroup>
+
+    <Import Project="../../src/GamerTalk.TailwindCSS.MSBuild/Build/GamerTalk.TailwindCSS.MSBuild.props" />
+    <Import Project="../../src/GamerTalk.TailwindCSS.MSBuild/Build/GamerTalk.TailwindCSS.MSBuild.targets" />
+    
+</Project>

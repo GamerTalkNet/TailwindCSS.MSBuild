@@ -20,6 +20,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflows", "Workflows", "{
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{694AFB87-6A37-4E1B-A316-9BDE2983B4E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "Test\WebApplication1\WebApplication1.csproj", "{C0E8B3E9-F0F5-44C8-9D9D-0F143C5B068A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,11 +34,15 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9E8BC22C-3C3A-43E8-A6DC-D2F0B8B4082A} = {DE699C04-5FC5-471E-A617-512D8F09B0E0}
+		{C0E8B3E9-F0F5-44C8-9D9D-0F143C5B068A} = {694AFB87-6A37-4E1B-A316-9BDE2983B4E3}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9E8BC22C-3C3A-43E8-A6DC-D2F0B8B4082A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9E8BC22C-3C3A-43E8-A6DC-D2F0B8B4082A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E8BC22C-3C3A-43E8-A6DC-D2F0B8B4082A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E8BC22C-3C3A-43E8-A6DC-D2F0B8B4082A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E8B3E9-F0F5-44C8-9D9D-0F143C5B068A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E8B3E9-F0F5-44C8-9D9D-0F143C5B068A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E8B3E9-F0F5-44C8-9D9D-0F143C5B068A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 EndGlobal

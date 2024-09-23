@@ -1,5 +1,65 @@
 <Project>
 
+    <UsingTask
+            TaskName="UpdateTailwindContent"
+            AssemblyFile="$(TailwindCSSAssemblyPath)\GamerTalk.TailwindCSS.MSBuild.dll"
+            Condition=" '$(DisableCopyOnWrite)' != 'true' AND '$(DisableCopyOnWrite)' != '1' " />
+    
+    <Target Name="CreatePostCssConfig" AfterTargets="InstallNodePackages"
+            BeforeTargets="Build" Condition="!Exists('postcss.config.js')">
 
+        <Message Text="Creating default postcss config..." Importance="high"/>
+
+        <PropertyGroup>
+            <DefaultPostCssConfig>
+// postcss.config.js
+module.exports = {
+  plugins: [
+    require('postcss-import'),
+    require('tailwindcss')('./tailwind.config.js'),
+    require('autoprefixer'),
+    require('postcss-nesting'),
+    require('cssnano')
+  ]
+}
+            </DefaultPostCssConfig>
+        </PropertyGroup>
+
+        <WriteLinesToFile File="postcss.config.js" Lines="$(DefaultPostCssConfig)"
+                          Overwrite="true" Encoding="UTF-8"/>
+
+    </Target>
+
+    <Target Name="ImportContent" AfterTargets="InstallNodePackages" BeforeTargets="Build"
+            Inputs="@(Content)" Outputs="@(Content.Identity)"
+            Condition=" '$(TailwindIncludeContent)' != 'false' ">
+        <ItemGroup>
+            <TailwindCSSContent Include="./%(Content.Identity)" Condition="$([System.String]::Copy(%(Content.Identity)).EndsWith('.html'))"/>
+            <TailwindCSSContent Include="./%(Content.Identity)" Condition="$([System.String]::Copy(%(Content.Identity)).EndsWith('.js'))"/>
+
+            <TailwindCSSContent Include="./%(Content.Identity)" Condition="$([System.String]::Copy(%(Content.Identity)).EndsWith('.cshtml'))"/>
+            <TailwindCSSContent Include="./%(Content.Identity)" Condition="$([System.String]::Copy(%(Content.Identity)).EndsWith('.razor'))"/>
+        </ItemGroup>
+    </Target>
+
+    <Target Name="ImportStaticWebAssets" AfterTargets="InstallNodePackages" BeforeTargets="Build"
+            Inputs="@(StaticWebAsset)" Outputs="@(StaticWebAsset.Identity)"
+            Condition=" '$(TailwindIncludeStaticWebAssets)' != 'false' ">
+        <ItemGroup>
+            <TailwindCSSContent Include="wwwroot/%(StaticWebAsset.RelativePath)"
+                                Condition="$([System.String]::Copy(%(StaticWebAsset.Identity)).EndsWith('.html'))"/>
+            <TailwindCSSContent Include="wwwroot/%(StaticWebAsset.RelativePath)"
+                                Condition="$([System.String]::Copy(%(StaticWebAsset.Identity)).EndsWith('.js'))"/>
+            <TailwindCSSContent Include="wwwroot/%(StaticWebAsset.RelativePath)"
+                                Condition="$([System.String]::Copy(%(StaticWebAsset.Identity)).EndsWith('.ts'))"/>
+        </ItemGroup>
+    </Target>
+
+    <Target Name="RunTailwind" AfterTargets="CreateTailwindConfig" BeforeTargets="Build">
+
+        <UpdateTailwindContent TailwindContentItems="@(TailwindCSSContent)"
+                               ProjectPath="$(ProjectDir)"/>
+
+    </Target>
 
 </Project>

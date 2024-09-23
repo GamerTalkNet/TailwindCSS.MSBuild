@@ -1,5 +1,26 @@
 <Project>
+
+    <ItemGroup>
+        <AvailableItemName Include="TailwindCSS"/>
+    </ItemGroup>
+
+    <PropertyGroup>
+        <TailwindCSSInputFile Condition=" '$(TailwindCSSInputFile)'=='' ">tailwind.css</TailwindCSSInputFile>
+        <TailwindCSSOutputFile Condition=" '$(TailwindCSSOutputFile)'=='' ">wwwroot/css/tailwind.css</TailwindCSSOutputFile>
+        
+        <TailwindIncludeContent Condition=" '$(TailwindIncludeContent)'=='' ">true</TailwindIncludeContent>
+        <TailwindIncludeStaticWebAssets Condition=" '$(TailwindIncludeStaticWebAssets)'=='' ">true</TailwindIncludeStaticWebAssets>
+        
+        <TailwindCSSOutputImportance Condition=" '$(TailwindCSSOutputImportance)'=='' ">low</TailwindCSSOutputImportance>
     
+        <TailwindCSSAssemblyPath Condition=" '$(TailwindCSSAssemblyPath)'=='' ">$(MSBuildThisFileDirectory)..\build\netstandard2.0</TailwindCSSAssemblyPath>
+    </PropertyGroup>
     
+    <ItemGroup>
+        <NodePackageReference Include="tailwindcss" Visible="false" Type="dev"/>
+        <NodePackageReference Include="autoprefixer" Visible="false" Type="dev"/>
+        <NodePackageReference Include="postcss" Visible="false" Type="dev"/>
+        <NodePackageReference Include="postcss-cli" Visible="false" Type="dev"/>
+    </ItemGroup>
     
 </Project>
